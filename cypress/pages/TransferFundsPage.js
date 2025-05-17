@@ -1,21 +1,27 @@
 class TransferFundsPage {
+    selectFromAccount(accountId) {
+      cy.get('#fromAccountId').select(accountId);
+    }
+  
+    selectToAccount(accountId) {
+      cy.get('#toAccountId').select(accountId);
+    }
+  
     enterAmount(amount) {
-      cy.get('#amount').clear().type(amount);
+      cy.get('input[name="amount"]').clear().type(amount);
     }
-    selectFromAccount(account) {
-      cy.get('#fromAccountId').select(account);
-    }
-    selectToAccount(account) {
-      cy.get('#toAccountId').select(account);
-    }
+  
     submitTransfer() {
-      cy.get('input[value="Transfer"]').click();
+      cy.get('input[type="submit"]').click();
     }
+  
     getSuccessMessage() {
       return cy.contains('Transfer Complete!');
     }
   }
+  
   export default TransferFundsPage;
+  
   
   
   

@@ -1,7 +1,8 @@
 class AccountOverviewPage {
     getAccountTable() {
-      return cy.get('#accountTable');
+      return cy.get('table');
     }
   }
+  
   export default AccountOverviewPage;
   
